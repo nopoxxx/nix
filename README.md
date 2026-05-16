@@ -37,6 +37,6 @@ Uncomment `git` in `/etc/nixos/configuration.nix`:
 
 ### 8. Build system with flake
 
-    sudo nixos-rebuild build --flake ~/nix#nixos
+    sudo nixos-rebuild boot --flake ~/nix#nixos
 
 ## Done
