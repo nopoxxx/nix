@@ -5,7 +5,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    interactiveShellInit = ''
+    initExtra = ''
       fastfetch
     '';
 
