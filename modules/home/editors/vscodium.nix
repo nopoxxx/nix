@@ -11,16 +11,6 @@
       esbenp.prettier-vscode
       dbaeumer.vscode-eslint
     ];
-
-    userSettings = {
-    "security.workspace.trust.untrustedFiles" = "open";
-    "editor.fontSize" = 18;
-    "editor.formatOnSave" = true;
-    "files.autoSave" = "afterDelay";
-    "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
-    "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font'";
-    "editor.defaultFormatter" = "esbenp.prettier-vscode";
-    };
   };
 };
 }
