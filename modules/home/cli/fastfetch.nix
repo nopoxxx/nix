@@ -4,7 +4,7 @@
 
   settings = {
     logo = {
-      source = "/home/${user}/.config/fastfetch/*.png";
+      source = "/home/${user}/nix/storage/fastfetch/*.png";
       type = "kitty";
       height = 22;
 
