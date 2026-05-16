@@ -10,5 +10,6 @@
     qbittorrent
     deadlock-mod-manager
     flatpak
+    qpwgraph
   ];
 }
