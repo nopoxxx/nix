@@ -17,32 +17,26 @@ Uncomment `git` in `/etc/nixos/configuration.nix`:
 
 ### 3. Apply configuration
 
-    ```bash
     sudo nixos-rebuild switch
-    ```
 
 ### 4. Clone repository
 
-    ```bash
     git clone https://github.com/nopoxxx/nix.git
-    ```
 
 ### 5. Copy hardware config
 
-    ```bash
     sudo cp /etc/nixos/hardware-configuration.nix ~/nix/
-    ```
 
 ### 6. Fix permissions
 
-    ```bash
     sudo chown -R $USER:users /home/$USER/nix/nixos
-    ```
 
-### 7. Build system with flake
+### 7. Edit user in flake.nix
 
-    ```bash
+user = "nopox"; <--- set your username
+
+### 8. Build system with flake
+
     sudo nixos-rebuild build --flake ~/nix#nixos
-    ```
 
-## ✅ Done
+## Done
