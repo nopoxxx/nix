@@ -1,0 +1,139 @@
+{ config, pkgs, ... }: {
+  programs.fastfetch = {
+  enable = true;
+
+  settings = {
+    logo = {
+      source = "/home/${user}/.config/fastfetch/*.png";
+      type = "kitty";
+      height = 22;
+
+      padding = {
+        top = 1;
+        left = 2;
+      };
+    };
+
+    modules = [
+      {
+        type = "custom";
+        format = "┌──────────────────────────────────────────┐";
+      }
+
+      {
+        type = "os";
+        key = "   OS";
+        format = "{name} {arch}";
+        keyColor = "red";
+      }
+
+      {
+        type = "kernel";
+        key = "   Kernel";
+        format = "{2}";
+        keyColor = "red";
+      }
+
+      {
+        type = "packages";
+        key = "  󰏗 Packages";
+        format = "{nix-all} (nix), {flatpak-user} (flatpak)";
+        keyColor = "green";
+      }
+
+      {
+        type = "display";
+        key = "  󰍹 Display";
+        format = "{1}x{2} @ {3}Hz [{7}]";
+        keyColor = "green";
+      }
+
+      {
+        type = "terminal";
+        key = "   Terminal";
+        keyColor = "yellow";
+      }
+
+      {
+        type = "wm";
+        key = "  󱗃 WM";
+        format = "{pretty-name} {version} ({protocol-name})";
+        keyColor = "yellow";
+      }
+
+      {
+        type = "custom";
+        format = "└──────────────────────────────────────────┘";
+      }
+
+      "break"
+
+      {
+        type = "title";
+        key = "  ";
+        format = "{6} {7} {8}";
+      }
+
+      "break"
+
+      {
+        type = "custom";
+        format = "┌──────────────────────────────────────────┐";
+      }
+
+      {
+        type = "cpu";
+        format = "{1} @ {7}";
+        key = "   CPU";
+        keyColor = "blue";
+      }
+
+      {
+        type = "gpu";
+        format = "{name} [{type}]";
+        key = "  󰊴 GPU";
+        keyColor = "blue";
+      }
+
+      {
+        type = "command";
+        text = "glxinfo 2>/dev/null | grep 'OpenGL version' | sed 's/.*Mesa /amdgpu (Mesa /' | sed 's/-cachyos[0-9.]*/-cachyos)/' | awk '{print $1, $2, $3}'";
+        key = "   GPU Driver";
+        keyColor = "magenta";
+      }
+
+      {
+        type = "memory";
+        key = "   Memory ";
+        keyColor = "magenta";
+      }
+
+      {
+        type = "command";
+        key = "  󱦟 OS Age ";
+        keyColor = "red";
+        text = "bash -c 'DAYS=$(( ($(date +%s) - $(stat -c %W /)) / 86400 )); DATE=$(LC_TIME=C date -d @$(stat -c %W /) \\\"+%b %d, %Y\\\"); echo \\\"$DAYS days ($DATE)\\\"'";
+      }
+
+      {
+        type = "uptime";
+        key = "  󱫐 Uptime ";
+        keyColor = "red";
+      }
+
+      {
+        type = "custom";
+        format = "└──────────────────────────────────────────┘";
+      }
+
+      {
+        type = "colors";
+        paddingLeft = 2;
+        symbol = "circle";
+      }
+
+      "break"
+    ];
+  };
+};
+}

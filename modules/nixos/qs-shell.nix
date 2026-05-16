@@ -1,0 +1,16 @@
+{ config, pkgs, ... }: {
+    programs.dms-shell = {
+    enable = true;
+
+    systemd = {
+     enable = true;
+     restartIfChanged = true;
+    };
+  
+    enableSystemMonitoring = true;
+    enableDynamicTheming = true;
+    enableAudioWavelength = true;
+    enableCalendarEvents = true;
+    enableClipboardPaste = true;
+  };
+}
