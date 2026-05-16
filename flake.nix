@@ -30,6 +30,10 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
 
+      specialArgs = {
+        inherit user;
+      };
+
       modules = [
         {
           nixpkgs.overlays = [

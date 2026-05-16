@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, user, ... }: {
   programs.fastfetch = {
   enable = true;
 

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, user, ... }: {
   programs.niri.enable = true;
   system.activationScripts.niriConfig = ''
     mkdir -p /home/${user}/.config/niri
