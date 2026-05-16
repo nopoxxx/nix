@@ -33,7 +33,7 @@ Uncomment `git` in `/etc/nixos/configuration.nix`:
 
 ### 7. Edit user in flake.nix
 
-user = "nopox"; <--- set your username
+    user = "nopox"; <--- set your username
 
 ### 8. Build system with flake
 
