@@ -4,8 +4,6 @@
 
     package = pkgs.firefox;
 
-    configPath = "${config.xdg.configHome}/mozilla/firefox";
-
     profiles.default = {
       id = 0;
       isDefault = true;

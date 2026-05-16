@@ -11,7 +11,7 @@
       in {
       rebuild = "sudo nixos-rebuild switch --flake ${flakeDir}";
 
-      conf = "codium ${flakeDir}/";
+      conf = "codium ${flakeDir}/"; 
       pkgs = "nano ${flakeDir}/packages/user.nix";
 
       ls = "ls --color";

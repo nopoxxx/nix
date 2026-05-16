@@ -7,11 +7,13 @@
 
   programs.home-manager.enable = true;
 
+
   imports = [
     ../modules/home/browsers
     ../modules/home/cli
     ../modules/home/editors
     ../modules/home/media
     ../modules/home/desktop
+    ../modules/home/games
   ];
 }

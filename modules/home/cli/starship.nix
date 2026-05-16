@@ -6,7 +6,7 @@
 
   settings = builtins.fromTOML (builtins.readFile (
     pkgs.runCommand "starship-config" {} ''
-      cp ${pkgs.starship}/share/starship/presets/gruvbox-rainbow.toml $out
+      cp ${pkgs.starship}/share/starship/presets/gruvbox-rainbow.toml $out 
     ''
   ));
 };

@@ -30,4 +30,10 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  fileSystems."/mnt/games" = {
+  device = "/dev/disk/by-uuid/0bd0f63c-666f-418d-85cc-c6b0403c309b";
+  fsType = "ext4";
+  options = [ "nofail" "x-systemd.automount" ];
+};
 }
