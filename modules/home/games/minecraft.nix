@@ -1,25 +1,18 @@
-{ config, pkgs, ... }:  {
-programs.prismlauncher = {
-  enable = true;
+{
+  programs.prismlauncher = {
+    enable = true;
 
-  extraPackages = [
-    (pkgs.stdenvNoCC.mkDerivation {
-      pname = "prismlauncher-gruvbox-soft";
-      version = "1.0";
-
-      src = pkgs.fetchFromGitHub {
-        owner = "PrismLauncher";
-        repo = "Themes";
-        rev = "main";
-        sha256 = "sha256-aaphBE1QkJid9IAUZZB3zcabqSAd/GoMsl9seulv8Tw=";
-      };
-
-      installPhase = ''
+    extraPackages = [
+      (pkgs.runCommand "prismlauncher-gruvbox-soft" {} ''
         mkdir -p $out/share/PrismLauncher/themes
-        cp -r themes/Gruvbox-Soft \
+        cp -r ${pkgs.fetchFromGitHub {
+          owner = "PrismLauncher";
+          repo = "Themes";
+          rev = "main";
+          sha256 = "sha256-aaphBE1QkJid9IAUZZB3zcabqSAd/GoMsl9seulv8Tw=";
+        }}/themes/Gruvbox-Soft \
           $out/share/PrismLauncher/themes/
-      '';
-    })
-  ];
-};
+      '')
+    ];
+  };
 }
