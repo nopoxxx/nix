@@ -5,6 +5,10 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    interactiveShellInit = ''
+      fastfetch
+    '';
+
     shellAliases =
       let
         flakeDir = "~/nix";
