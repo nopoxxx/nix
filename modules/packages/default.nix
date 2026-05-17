@@ -7,6 +7,5 @@
     ./user.nix
   ];
 
-  services.flatpak.enable = true;
   nixpkgs.config.allowUnfree = true;
 }

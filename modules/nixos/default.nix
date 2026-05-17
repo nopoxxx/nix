@@ -14,5 +14,6 @@
     ./niri.nix
     ./qs-shell.nix
     ../../hardware-configuration.nix
+    ./flatpak.nix
   ];
 }
